@@ -1,26 +1,22 @@
+import re
 from pathlib import Path
+
+count = 0
+
+def repl(matchobj):
+    global count
+    count+=1
+    return f'{str(count)} |'
 
 readme = Path("README.md")
 
 if readme.exists():
     with open(readme, 'r', errors="surrogateescape") as f:
-        readme_lines = f.readlines()
+        readme_lines = f.read()
 
-    actual_count = 0
-
-    for line_idx in range(len(readme_lines)):
-        line = readme_lines[line_idx]
-        try:
-            count_in_file = line.split()[0].strip(" \n.")
-            if int(count_in_file):
-                actual_count+=1
-                line = line.replace(count_in_file, str(actual_count), 1)
-                readme_lines[line_idx] = line
-        except:
-            # int conversion fails if it's not a sr. record line
-            pass
+    readme_lines = re.sub("^([0-9]+[ .]?)\|", repl, readme_lines, flags=re.MULTILINE)
 
     with open(readme, 'w', errors="surrogateescape") as f:
-        f.write(''.join(readme_lines))
+        f.write(readme_lines)
 else:
     print("The source file doesn't exist.")
