@@ -1,8 +1,8 @@
 $AsciiArt = "
-  __  ____  _ ____    _  _  __  __ _       ____  ____  ____  _  _  ____ 
+  __  ____  _ ____    _  _  __  __ _       ____  ____  ____  _  _  ____
  / _\(_  _)(// ___)  / )( \(  )(  ( \ ___ / ___)(  __)(_  _)/ )( \(  _ \
 /    \ )(    \___ \  \ /\ / )( /    /(___)\___ \ ) _)   )(  ) \/ ( ) __/
-\_/\_/(__)   (____/  (_/\_)(__)\_)__)     (____/(____) (__) \____/(__)  
+\_/\_/(__)   (____/  (_/\_)(__)\_)__)     (____/(____) (__) \____/(__)
 "
 
 $border = "==============================================="
@@ -931,8 +931,8 @@ function ReadPrefs {
     $prefs = Get-Content $prefFile
     $actionType = ($prefs | Select-Object -Index 2).Trim().ToLower()
 
-    If ($actionType == "undo") {
-        ($prefs | Select-Object -Index 6).split(",").Trim() | ForEach {
+    If ($actionType -eq "setup") {
+        ($prefs | Select-Object -Index 6).split(",").Trim() | ForEach-Object {
             Switch($_) {
                 1 { InstallCustomSoftware }
                 2 { UninstallBloatware }
@@ -971,8 +971,8 @@ function ReadPrefs {
                 35 { DisableFirewall }
             }
         }
-    } Else If ($actionType == "setup") {
-        ($prefs | Select-Object -Index 11).split(",").Trim() | ForEach {
+    } ElseIf ($actionType -eq "undo") {
+        ($prefs | Select-Object -Index 11).split(",").Trim() | ForEach-Object {
             Switch($_) {
                 # 1 { InstallCustomSoftware }
                 # 2 { UninstallBloatware }
