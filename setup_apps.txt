@@ -1,5 +1,5 @@
 Apps to Install (Winget IDs)
-===================================
+====================================
 "BraveSoftware.BraveBrowser"
 "Microsoft.PowerToys"
 "voidtools.Everything"
