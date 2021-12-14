@@ -23,7 +23,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/JDcs6'))
 
 # Reference
 ## Essentials
-Sr. | Function | One-Click Restore?
+Sr. | Function | Undo Possibility
 ---|---|---
 1 | Install Custom Software | ❌
 2 | Remove Bloatware | ❌
@@ -53,7 +53,7 @@ Sr. | Function | One-Click Restore?
 26 | Create a Restore Point | —
 
 ## Optionals
-Sr. | Function | One-Click Restore?
+Sr. | Function | Undo Possibility
 ---|---|---
 27 | Change Explorer's Default Location to "This PC" | ✔️
 28 | Hide 3D Objects from Explorer | ✔️
