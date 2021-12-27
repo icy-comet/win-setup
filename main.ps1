@@ -15,9 +15,10 @@ $ErrorActionPreference = 'SilentlyContinue'
 
 Start-Transcript -Path "~\Desktop\setup_log.txt"
 
-# Check if ran-as-admin otherwise invoke UAC
+# Check if ran-as-admin otherwise exit
 If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
-    Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+    Write-Host "Please run the script with Administrator privileges."
+    pause
     Exit
 }
 
@@ -71,7 +72,7 @@ function InstallCustomSoftware {
 
 # sycnex
 function DisableUnnecessaryTasks {
-    #Disables scheduled tasks that are considered unnecessary
+    # Disables scheduled tasks that are considered unnecessary
     Write-Host "Disabling unnecessary scheduled tasks..."
     Get-ScheduledTask  XblGameSaveTaskLogon | Disable-ScheduledTask
     Get-ScheduledTask  XblGameSaveTask | Disable-ScheduledTask
