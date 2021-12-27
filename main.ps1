@@ -610,6 +610,7 @@ function UninstallBloatware {
     "*SpotifyMusic*"
     "*PhototasticCollage*"
     "*WinZipUniversal*"
+    "*HotspotShieldFreeVPN*"
     )
 
     Write-Host "Removing Bloatware..."
