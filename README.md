@@ -25,45 +25,46 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/JDcs6'))
 ## Essentials
 Sr. | Function | Undo Possibility
 ---|---|---
-1 | Install Custom Software | ❌
-2 | Remove Bloatware | ❌
-3 | Disable Unnecessary Scheduled Tasks | ✔️
-4 | Disable Data Collection | ✔️
-5 | Disable Wifi Sense | ✔️
-6 | Disable User Activity History | ✔️
-7 | Hide Tasks View button in Taskbar | ✔️
-8 | Hide Meet Now button in Taskbar | ✔️
-9 | Hide News And Interests in Taskbar | ✔️
-10 | Hide Search Button/Box in Taskbar | ✔️
-11 | Disable Collapsible Tray in Taskbar | ✔️
-12 | Stop Edge from taking over as Default PDF Viewer | ✔️
-13 | Disable Autorun | ✔️
-14 | Disable Windows Search Indexing | ✔️
-15 | Enable NTFS Long Paths (over 260 characters) | ✔️
-16 | Disable searching for apps in Store for unknown extensions | ✔️
-17 | Hide "Recently Added" list from Start Menu | ✔️
-18 | Disable Windows App Suggestions | ✔️
-19 | Disable Web Search In Start Menu | ✔️
-20 | Disable Nav. Pane Expand (Explorer) | ✔️
-21 | Show File Extensions in Explorer | ✔️
-22 | Set 12-Hour Time Format & change TimeZone | —
-23 | Change PC Name | —
-24 | Set Control Panel's view to Large Icons | —
-25 | Optimize C Drive | —
-26 | Create a Restore Point | —
+1 | Create a Restore Point | —
+2 | Install Custom Software | ❌
+3 | Remove Bloatware | ❌
+4 | Disable Unnecessary Scheduled Tasks | ✔️
+5 | Disable Data Collection | ✔️
+6 | Disable Wifi Sense | ✔️
+7 | Disable User Activity History | ✔️
+8 | Hide Tasks View button in Taskbar | ✔️
+9 | Hide Meet Now button in Taskbar | ✔️
+10 | Hide News And Interests in Taskbar | ✔️
+11 | Hide Search Button/Box in Taskbar | ✔️
+12 | Disable Collapsible Tray in Taskbar | ✔️
+13 | Stop Edge from taking over as Default PDF Viewer | ✔️
+14 | Disable Autorun | ✔️
+15 | Disable Windows Search Indexing | ✔️
+16 | Enable NTFS Long Paths (over 260 characters) | ✔️
+17 | Disable searching for apps in Store for unknown extensions | ✔️
+18 | Hide "Recently Added" list from Start Menu | ✔️
+19 | Disable Windows App Suggestions | ✔️
+20 | Disable Web Search In Start Menu | ✔️
+21 | Disable Nav. Pane Expand (Explorer) | ✔️
+22 | Show File Extensions in Explorer | ✔️
+23 | Set 12-Hour Time Format | —
+24 | Change Time Zone to IST | —
+25 | Change PC Name | —
+26 | Set Control Panel's view to Large Icons | —
+27 | Optimize C Drive | —
 
 ## Optionals
 Sr. | Function | Undo Possibility
 ---|---|---
-27 | Change Explorer's Default Location to "This PC" | ✔️
-28 | Hide 3D Objects from Explorer | ✔️
-29 | Set BIOS Time to UTC | ✔️
-30 | Disable Fast Startup | ✔️
-31 | Show Hidden Files in Explorer | ✔️
-32 | NetworkingOptimizations | ✔️
-33 | Disable F1 Help Key (Explorer & Desktop) | ✔️
-34 | Unhide Desktop Icons -- User's Home Folder, This PC & Control Panel | ✔️
-35 | Disable Firewall | ✔️
+28 | Change Explorer's Default Location to "This PC" | ✔️
+29 | Hide 3D Objects from Explorer | ✔️
+30 | Set BIOS Time to UTC | ✔️
+31 | Disable Fast Startup | ✔️
+32 | Show Hidden Files in Explorer | ✔️
+33 | NetworkingOptimizations | ✔️
+34 | Disable F1 Help Key (Explorer & Desktop) | ✔️
+35 | Unhide Desktop Icons -- User's Home Folder, This PC & Control Panel | ✔️
+36 | Disable Firewall | ✔️
 
 Note: I haven't touched most of Cortana to preserve Windows functions that most might expect to "just" work.
 

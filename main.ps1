@@ -936,81 +936,83 @@ function ReadPrefs {
     If ($actionType -eq "setup") {
         ($prefs | Select-Object -Index 6).split(",").Trim() | ForEach-Object {
             Switch($_) {
-                1 { InstallCustomSoftware }
-                2 { UninstallBloatware }
-                3 { DisableUnnecessaryTasks }
-                4 { DisableDataCollection }
-                5 { DisableWifiSense }
-                6 { DisableUserActivityHistory }
-                7 { HideTasksViewBtn }
-                8 { HideMeetNowBtn }
-                9 { HideNewsAndInterests }
-                10 { HideSearchButtonAndBox }
-                11 { DisableCollapsibleTray }
-                12 { StopEdgePDF }
-                13 { DisableAutorun }
-                14 { DisableIndexing }
-                15 { EnableNTFSLongPaths }
-                16 { DisableSearchAppInStore }
-                17 { HideRecentlyAddedApps }
-                18 { DisableAppSuggestions }
-                19 { DisableWebSearchInMenu }
-                20 { DisableNavPaneExpand }
-                21 { ShowExpolorerFileExtensions }
-                22 { Set12HrTimeFormat }
-                23 { SetPCName }
-                24 { SetControlPanelLargeIcons }
-                25 { OptimizeCDrive }
-                26 { CreateRestorePoint }
-                27 { UpdateExplorerDefaultLocation }
-                28 { Hide3DObjectsInExplorer }
-                29 { SetBIOSTimeToUTC }
-                30 { DisableFastStartup }
-                31 { ShowHiddenFiles }
-                32 { OptimizeNetworking }
-                33 { DisableF1HelpKey }
-                34 { UnhideDesktopIcons }
-                35 { DisableFirewall }
+                1 { CreateRestorePoint }
+                2 { InstallCustomSoftware }
+                3 { UninstallBloatware }
+                4 { DisableUnnecessaryTasks }
+                5 { DisableDataCollection }
+                6 { DisableWifiSense }
+                7 { DisableUserActivityHistory }
+                8 { HideTasksViewBtn }
+                9 { HideMeetNowBtn }
+                10 { HideNewsAndInterests }
+                11 { HideSearchButtonAndBox }
+                12 { DisableCollapsibleTray }
+                13 { StopEdgePDF }
+                14 { DisableAutorun }
+                15 { DisableIndexing }
+                16 { EnableNTFSLongPaths }
+                17 { DisableSearchAppInStore }
+                18 { HideRecentlyAddedApps }
+                19 { DisableAppSuggestions }
+                20 { DisableWebSearchInMenu }
+                21 { DisableNavPaneExpand }
+                22 { ShowExpolorerFileExtensions }
+                23 { Set12HrTimeFormat }
+                24 { SetTZIndia }
+                25 { SetPCName }
+                26 { OptimizeCDrive }
+                27 { SetControlPanelLargeIcons }
+                28 { UpdateExplorerDefaultLocation }
+                29 { Hide3DObjectsInExplorer }
+                30 { SetBIOSTimeToUTC }
+                31 { DisableFastStartup }
+                32 { ShowHiddenFiles }
+                33 { OptimizeNetworking }
+                34 { DisableF1HelpKey }
+                35 { UnhideDesktopIcons }
+                36 { DisableFirewall }
             }
         }
     } ElseIf ($actionType -eq "undo") {
-        ($prefs | Select-Object -Index 11).split(",").Trim() | ForEach-Object {
+        ($prefs | Select-Object -Index 10).split(",").Trim() | ForEach-Object {
             Switch($_) {
-                # 1 { InstallCustomSoftware }
-                # 2 { UninstallBloatware }
-                3 { EnableUnnecessaryTasks }
-                4 { EnableDataCollection }
-                5 { EnableWifiSense }
-                6 { EnableUserActivityHistory }
-                7 { UnhideTasksViewBtn }
-                8 { UnhideMeetNowBtn }
-                9 { UnhideNewsAndInterests }
-                10 { UnhideSearchButtonAndBox }
-                11 { EnableCollapsibleTray }
-                12 { AllowEdgePDF }
-                13 { EnableAutorun }
-                14 { EnableIndexing }
-                15 { DisableNTFSLongPaths }
-                16 { EnableSearchAppInStore }
-                17 { UnhideRecentlyAddedApps }
-                18 { EnableAppSuggestions }
-                19 { EnableWebSearchInMenu }
-                20 { EnableNavPaneExpand }
-                21 { HideExpolorerFileExtensions }
-                # 22 { Set12HrTimeFormat }
-                # 23 { SetPCName }
-                # 24 { SetControlPanelLargeIcons }
-                # 25 { OptimizeCDrive }
-                # 26 { CreateRestorePoint }
-                27 { RevertExplorerDefaultLocation }
-                28 { Unhide3DObjectsInExplorer }
-                29 { SetBIOSTimeToLocal }
-                30 { EnableFastStartup }
-                31 { HideHiddenFiles }
-                32 { RevertNetworkingOptimization }
-                33 { EnableF1HelpKey }
-                34 { HideDesktopIcons }
-                35 { EnableFirewall }
+                # 1 { CreateRestorePoint }
+                # 2 { InstallCustomSoftware }
+                # 3 { UninstallBloatware }
+                4 { EnableUnnecessaryTasks }
+                5 { EnableDataCollection }
+                6 { EnableWifiSense }
+                7 { EnableUserActivityHistory }
+                8 { UnhideTasksViewBtn }
+                9 { UnhideMeetNowBtn }
+                10 { UnhideNewsAndInterests }
+                11 { UnhideSearchButtonAndBox }
+                12 { EnableCollapsibleTray }
+                13 { AllowEdgePDF }
+                14 { EnableAutorun }
+                15 { EnableIndexing }
+                16 { DisableNTFSLongPaths }
+                17 { EnableSearchAppInStore }
+                18 { UnhideRecentlyAddedApps }
+                19 { EnableAppSuggestions }
+                20 { EnableWebSearchInMenu }
+                21 { EnableNavPaneExpand }
+                22 { HideExpolorerFileExtensions }
+                # 23 { Set12HrTimeFormat }
+                # 24 { SetTZIndia }
+                # 25 { SetPCName }
+                # 26 { SetControlPanelLargeIcons }
+                # 27 { OptimizeCDrive }
+                28 { RevertExplorerDefaultLocation }
+                29 { Unhide3DObjectsInExplorer }
+                30 { SetBIOSTimeToLocal }
+                31 { EnableFastStartup }
+                32 { HideHiddenFiles }
+                33 { RevertNetworkingOptimization }
+                34 { EnableF1HelpKey }
+                35 { HideDesktopIcons }
+                36 { EnableFirewall }
             }
         }
     } Else {
