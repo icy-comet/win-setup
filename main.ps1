@@ -38,36 +38,33 @@ function InstallCustomSoftware {
         exit
     }
 
-    If (!Test-Path ~\AppData\Local\Microsoft\WindowsApps\winget.exe) {
+    If (!Test-Path "~\AppData\Local\Microsoft\WindowsApps\winget.exe") {
         Write-Host "Winget not found."
         Write-Host "Installing winget..."
 
         Start-Process "ms-appinstaller:?source=https://aka.ms/getwinget"
         $nid = (Get-Process AppInstaller).Id
         Wait-Process -Id $nid
+        If (!$?) { Write-Host "Couldn't install winget. Skipping installing software..." }
+        exit
     }
 
-    If (Test-Path ~\AppData\Local\Microsoft\WindowsApps\winget.exe) {
-        Write-Host "Found winget. Installing apps..."
+    Write-Host "Found winget. Installing apps..."
+    Write-Host "Starting Installing Apps..."
 
-        Write-Host "Starting Installing Apps..."
+    $appsToInstall = Get-Content $listFile | Select-Object -Skip 2
 
-        $appsToInstall = Get-Content $listFile | Select-Object -Skip 2
+    ForEach ($app in $appsToInstall) {
+        $app = $app.Trim()
 
-        ForEach ($app in $appsToInstall) {
-            $app = $app.Trim()
+        Write-Host "Installing $app..."
 
-            Write-Host "Installing $app..."
+        winget install --accept-package-agreements --accept-source-agreements --exact $app | Out-Host
 
-            winget install --accept-package-agreements --accept-source-agreements --exact $app | Out-Host
-
-            If ($?) { Write-Host "Installed $app. Moving on..." }
-        }
-
-        Write-Host "Finished installing apps. Moving on..."
-    } Else {
-        Write-Host "Couldn't find/install winget. Skipping apps installation..."
+        If ($?) { Write-Host "Installed $app. Moving on..." }
     }
+
+    Write-Host "Finished installing apps. Moving on..."
 }
 
 # sycnex
